@@ -2,7 +2,7 @@
 
 Small React + TypeScript app for kata practice.
 
-## Step one: install and run the application
+## Part 0 - install and run the application
 
 1. Clone the repository and open it in your terminal.
 2. Install dependencies:
@@ -24,3 +24,8 @@ Then open the local URL shown by Vite.
 ```bash
 npm run build
 ```
+
+## Assignments
+
+- [Part 1 - Agentic Testing](assignment/part-one.md)
+- [Part 2 - Regression Loop](assignment/part-two.md)
