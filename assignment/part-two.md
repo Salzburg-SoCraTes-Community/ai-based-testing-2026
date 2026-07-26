@@ -1,59 +1,53 @@
-# Part 2 - Regression Loop
+# Part 2 - Implementation + Verification Loop
 
 ## Goal
 
-Extend the verification idea into a small regression workflow.
+Use an AI agent to change the app, then use your verification agent from Part 1 to check whether the change is correct.
 
-The agent should help answer:
+The question is:
 
-> What changed, what broke, and what should be tested next?
+> Can we create a useful loop where one agent implements and another agent verifies?
 
-Assume:
+Try to keep the roles separate:
 
-- the app will keep changing
-- some defects will be subtle
-- the output should be useful for a future run
+- **Implementation agent:** makes the change
+- **Verification agent:** checks the result against the specification
 
-## Automation angle
+An implementation agent can be a prompt, script, or coding assistant that edits the app for one small feature at a time.
 
-Think about a loop like:
+---
 
-```text
-Change detected
-→ Agent reviews relevant spec
-→ Agent checks app behavior
-→ Agent writes summary or test ideas
-→ Team fixes or accepts the change
-```
+## Part A - Manual improvement loop
 
-## Choose one or more path(s)
+1. Pick one small feature.
+2. Let an implementation agent make the change.
+3. Run the verification agent.
+4. Read the findings and improve the app or the prompt yourself.
+5. Run verification again.
 
-### Option A - Change-aware prompt
+## Part B - Agent-proposed improvements
 
-Create a prompt that focuses only on the affected feature.
+1. Pick one small feature.
+2. Let the verification agent report where it failed.
+3. Ask the agent to propose the next improvement to your agent.
+4. Apply the improvement.
+5. Verify again and see if the failure moves or disappears.
 
-Explore:
+## Bonus session
 
-- How does the agent narrow scope?
-- Does it ignore unrelated behavior?
-- Can it produce a short report?
+Add non-functional improvement dimensions to the loop:
 
-### Option B - Test selection agent
+- Did you use too many AI tokens?
+- Was the initial brief good enough?
+- Was the goal clear enough to start with?
+- Did the agent stay focused on the right feature?
 
-Use AI to pick the most useful tests to rerun.
+Use those notes to improve the next loop.
 
-Explore:
 
-- Which tests should always run?
-- Which tests are feature-specific?
-- Can the agent explain why a test matters?
+## Feature specs
 
-### Option C - Report generator
-
-Use AI to summarize mismatches and likely regressions.
-
-Explore:
-
-- Can the output be read quickly?
-- Does it include enough detail to reproduce a failure?
-- Can it suggest the next test to add?
+- [Promo Code Helper Text](features/promo-code-helper-text.md)
+- [Quantity Stepper](features/quantity-stepper.md)
+- [Status Badge](features/status-badge.md)
+- [New Design](features/design-from-screenshot.md)
