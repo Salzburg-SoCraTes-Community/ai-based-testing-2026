@@ -13,45 +13,44 @@ The goal is not to build the perfect test suite, but to explore how AI can help 
 Assume:
 
 - the implementation may contain bugs
-- the specification is the source of truth
+- the [specification](../specs/) is the source of truth
 
-## Automation angle
+### Start here - Prompt-based verification agent
 
-Also think about how your verification result could be used in an automated workflow.
+Start by creating a prompt that makes your AI assistant act as a verifier.
 
-For example:
+Use the specification as the main input. The specifications for different features may be in different formats, so the agent should be ready to read whatever it finds there. Ask the agent to:
 
-- run generated tests in CI
-- run UI tests after a pull request
-- let an agent create a verification report for a changed feature
-- use the scenarios as input for an implementation review
-- fail a workflow if critical behavior no longer matches the specification
-- let the agent propose new regression tests when it finds a mismatch
+- read the spec carefully
+- identify the rules that matter most
+- list the key behaviors that should be checked
+- suggest edge cases and failure modes
+- call out anything unclear, inconsistent, or underspecified
+- report possible bugs in plain language
 
-You do not need to fully automate this today. But try to create something that could become part of a loop like:
+Keep it simple at first. A good first version can be a short prompt that tells the model:
 
-```text
-Specification
-→ Implementation change
-→ Verification agent
-→ Tests / report / bug findings
-→ Fix or accept change
-```
+1. What app or feature it should verify.
+2. Where to find the specification, for example in `specs/`.
+3. What kind of output you want back.
+
+For example, the prompt can ask the agent to:
+
+- read the specification
+- extract the most important rules
+- turn those rules into concrete checks
+- point out edge cases and questionable behavior
+- summarize the result in a short verification report
+
+The first version does not need to be fancy. The main goal is to get a verifier that can reason from the spec and give you something you can actually use.
+
+When the prompt works well, turn it into something reusable if your IDE or agent setup supports that, such as a skill, custom instruction, or saved prompt.
 
 ## Choose one or more paths
 
-### Option A - Prompt-based verification agent
+Once you have built the prompt-based verification agent, choose one or more of these paths:
 
-Create a reusable prompt that makes your AI assistant act as a verifier.
-
-The agent could:
-- read the specification
-- identify important rules
-- create verification scenarios
-- find edge cases
-- report unclear behavior or possible bugs
-
-### Option B - Unit-test-generating agent
+### Option A - Unit-test-generating agent
 
 Use AI to generate unit or integration tests from the specification.
 
@@ -62,7 +61,7 @@ Explore:
 - Do the generated tests catch real bugs?
 - Does the AI test the spec, or just mirror the implementation?
 
-### Option C - UI-test-generating agent
+### Option B - UI-test-generating agent
 
 Use AI to generate UI tests from the user's perspective.
 
@@ -73,7 +72,7 @@ Explore:
 - Which user flows matter most?
 - Can AI verify visible results or compare it with the design specifications?
 
-### Option D - Property-based or snapshot testing
+### Option C - Property-based or snapshot testing
 
 Use AI to explore property-based tests or snapshot tests for the feature.
 
@@ -83,7 +82,7 @@ Explore:
 - Which outputs are stable enough for snapshots?
 - Can the agent explain what changed when a snapshot fails?
 
-### Option E - Browser-driven verification agent
+### Option D - Browser-driven verification agent
 
 Let the agent explore the app through a browser.
 
@@ -93,4 +92,3 @@ Explore:
 - Can it interact with the UI?
 - Can it compare actual behavior with the spec?
 - Can it produce reproduction steps or regression tests?
-
