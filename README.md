@@ -1,8 +1,6 @@
 # AI Based Testing Kata
 
-Small React + TypeScript app for kata practice.
-
-## Part 0 - install and run the application
+You can either set this up locally or using Github Codespaces.
 
 ### Local setup
 
@@ -45,6 +43,7 @@ npm run dev
 ```
 
 ## Assignments
+Find the Assignments for first and second session here:
 
 - [Part 1 - Agentic Testing](assignment/part-one.md)
 - [Part 2 - Regression Loop](assignment/part-two.md)
