@@ -82,7 +82,20 @@ Explore:
 - Which outputs are stable enough for snapshots?
 - Can the agent explain what changed when a snapshot fails?
 
-### Option D - Browser-driven verification agent
+### Option D - Specification format alignment
+
+Use AI to align different feature specifications into a common format.
+
+This could be OpenSpec, Gherkin, or another format that makes the rules easier to compare and reuse.
+
+Explore:
+
+- Which parts of the specs are easy to standardize?
+- What information gets lost when converting formats?
+- Can the shared format help the verifier or test generator?
+- Is there a better format for your project than the one you started with?
+
+### Option E - Browser-driven verification agent
 
 Let the agent explore the app through a browser.
 
