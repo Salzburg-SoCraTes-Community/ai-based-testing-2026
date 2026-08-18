@@ -50,7 +50,13 @@ When the prompt works well, turn it into something reusable if your IDE or agent
 
 Once you have built the prompt-based verification agent, choose one or more of these paths:
 
-### Option A - Unit-test-generating agent
+### Option A - More safety nets
+
+Use AI to add more safety nets around the specification and the app.
+
+Explore:
+
+#### Option A.1 - Unit-test-generating agent
 
 Use AI to generate unit or integration tests from the specification.
 
@@ -61,7 +67,7 @@ Explore:
 - Do the generated tests catch real bugs?
 - Does the AI test the spec, or just mirror the implementation?
 
-### Option B - UI-test-generating agent
+#### Option A.2 - UI-test-generating agent
 
 Use AI to generate UI tests from the user's perspective.
 
@@ -72,7 +78,7 @@ Explore:
 - Which user flows matter most?
 - Can AI verify visible results or compare it with the design specifications?
 
-### Option C - Property-based or snapshot testing
+#### Option A.3 - Property-based or snapshot testing
 
 Use AI to explore property-based tests or snapshot tests for the feature.
 
@@ -82,20 +88,7 @@ Explore:
 - Which outputs are stable enough for snapshots?
 - Can the agent explain what changed when a snapshot fails?
 
-### Option D - Specification format alignment
-
-Use AI to align different feature specifications into a common format.
-
-This could be OpenSpec, Gherkin, or another format that makes the rules easier to compare and reuse.
-
-Explore:
-
-- Which parts of the specs are easy to standardize?
-- What information gets lost when converting formats?
-- Can the shared format help the verifier or test generator?
-- Is there a better format for your project than the one you started with?
-
-### Option E - Browser-driven verification agent
+#### Option A.4 - Browser-driven verification agent
 
 Let the agent explore the app through a browser.
 
@@ -105,3 +98,14 @@ Explore:
 - Can it interact with the UI?
 - Can it compare actual behavior with the spec?
 - Can it produce reproduction steps or regression tests?
+
+### Option B - More structured specification
+
+Use AI to make the specification easier to compare, reuse, and verify.
+
+Explore:
+
+- Align different feature specifications into a common format
+- Use OpenSpec, Gherkin, or another format that makes rules easier to compare and reuse
+- Identify what information gets lost when converting formats
+- Check whether the shared format helps the verifier or test generator
