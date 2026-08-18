@@ -1,6 +1,6 @@
-# Feature: Screen Design From Screenshot
+# Feature: Design Changes
 
-Adjust the ticket app so it matches the provided screenshot.
+Adjust the ticket app to match the requested design changes.
 
 ## Layout
 
@@ -26,4 +26,4 @@ Adjust the ticket app so it matches the provided screenshot.
 
 - The content can stay functionally the same.
 - Only the visual presentation and ordering should change.
-- The final screen should feel close to the screenshot, not just loosely inspired by it.
+- The final screen should feel close to the requested design, not just loosely inspired by it.
