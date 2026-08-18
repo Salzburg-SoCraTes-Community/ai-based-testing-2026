@@ -4,14 +4,17 @@ Small React + TypeScript app for kata practice.
 
 ## Part 0 - install and run the application
 
+### Local setup
+
 1. Clone the repository and open it in your terminal.
-2. Install dependencies:
+2. Install Node.js first: https://nodejs.org/
+3. Install dependencies:
 
 ```bash
 npm install
 ```
 
-3. Start the app:
+4. Start the app:
 
 ```bash
 npm run dev
@@ -19,10 +22,26 @@ npm run dev
 
 Then open the local URL shown by Vite.
 
-## Build
+### GitHub Codespaces setup
+
+1. Open the repository in GitHub Codespaces.
+2. Install and switch to Node 18 with `nvm`:
 
 ```bash
-npm run build
+nvm install 18
+nvm use 18
+```
+
+3. Install dependencies:
+
+```bash
+npm install
+```
+
+4. Start the app:
+
+```bash
+npm run dev
 ```
 
 ## Assignments
